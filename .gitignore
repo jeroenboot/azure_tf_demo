@@ -1,6 +1,10 @@
 # Terraform's temp dir
 **/.terraform
 
+# IntelliJ files
+**/.idea
+*.iml
+
 # Azure service principal keys
 **/certs
 **/service-principal.*
