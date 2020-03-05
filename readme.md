@@ -1,12 +1,16 @@
+## Small demo to create a resource in Azure using a Service Principle and Client Certificate
+
 https://learn.hashicorp.com/terraform/azure/intro_az
 https://www.terraform.io/docs/providers/azurerm/guides/service_principal_client_certificate.html
+https://learn.hashicorp.com/terraform/azurerm/authentication-service-principal-client-certificate
 
 
-Create the (client) certificate
+
+### Create the (client) certificate
 ```
 $ openssl req -newkey rsa:4096 -nodes -keyout "service-principal.key" -out "service-principal.csr"
-
-
+```
+```
 jeroenboot@YWCMac076 terraform and azure demo % openssl req -newkey rsa:4096 -nodes -keyout "service-principal.key" -out "service-principal.csr"  
 Generating a 4096 bit RSA private key
 ................................................................++
@@ -36,7 +40,7 @@ A challenge password []:
 
 
 
-Init Terraform
+###Init Terraform
 ```
 jeroenboot@YWCMac076 terraform and azure demo % terraform init -var-file=secrets.tfvars     
 
@@ -55,7 +59,7 @@ rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
 ```
 
-Plan Terraform
+###Plan Terraform
 ```
 jeroenboot@YWCMac076 terraform and azure demo % terraform plan -var-file=secrets.tfvars   
 Refreshing Terraform state in-memory prior to plan...
@@ -87,7 +91,7 @@ can't guarantee that exactly these actions will be performed if
 "terraform apply" is subsequently run.
 ```
 
-Apply Terraform
+###Apply Terraform
 ```
 jeroenboot@YWCMac076 terraform and azure demo % terraform apply -var-file=secrets.tfvars
 
@@ -117,7 +121,7 @@ azurerm_resource_group.rg: Creation complete after 0s [id=/subscriptions/ea98c2e
 
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 ```
-Destroy
+###Destroy
 ```
 jeroenboot@YWCMac076 terraform and azure demo % terraform destroy -var-file=secrets.tfvars
 azurerm_resource_group.rg: Refreshing state... [id=/subscriptions/ea98c2e6-c105-4ca2-b7ba-xxxxxxxxxxxx/resourceGroups/TerraformRG]

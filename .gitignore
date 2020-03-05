@@ -2,7 +2,7 @@
 **/.terraform
 
 # IntelliJ files
-**/.idea
+.idea
 *.iml
 
 # Azure service principal keys
