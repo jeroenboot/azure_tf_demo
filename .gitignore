@@ -1,0 +1,17 @@
+# Terraform's temp dir
+**/.terraform
+
+# Azure service principal keys
+**/certs
+**/service-principal.*
+*.crt
+*.csr
+*.key
+*.pfx
+
+# Secret variables
+**/secrets.tfvars
+
+# TF State
+**/terraform.tfstate
+**/terraform.tfstate.backup
